@@ -13,11 +13,6 @@ div.card {
 
     transition: transform 0.3s ease,box-shadow 0.3s ease;
 }
-div.card:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 0 15px 30px rgba(125, 255, 121, 0.5);
-}
 
 div.cardimg {
     width: 100%;

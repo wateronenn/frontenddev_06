@@ -6,31 +6,19 @@ import Image from 'next/image'
 export default function Card({children,contentName} : {children:React.ReactNode, contentName:string}){
     
     function onVenueSelected(){
-        alert("Card "+ contentName +" is Clicked");
-    }
-    function onCardMouseAction(event:React.SyntheticEvent){
-        if(event.type == 'mouseover'){
-            event.currentTarget.classList.remove('bg-white')
-            event.currentTarget.classList.remove('shadow-lg')
-            event.currentTarget.classList.add('bg-neutral-200')
-            event.currentTarget.classList.add('shadow-2xl')
-        }
-        else{
-            event.currentTarget.classList.remove('bg-neutral-200')
-            event.currentTarget.classList.remove('shadow-2xl')
-            event.currentTarget.classList.add('bg-white')
-            event.currentTarget.classList.add('shadow-lg')
-        }
+        //alert("Card "+ contentName +" is Clicked");
     }
     
     return(
-        <div className="w-1/5 h-[450px] bg-white rounded-lg  pt-2.5 m-5 object-cover
-                        shadow-lg 
-                        transition-all duration-300 "
+        <div className="w-1/5 h-[500px] bg-white rounded-lg !p-4
+                        shadow-[0_15px_30px_rgba(160,160,255,0.5)]
+                        transition-all duration-300
+                        hover:shadow-[0_20px_40px_rgba(125,255,125,0.6)]
+                        hover:scale-105
+                        cursor-pointer
+                        "
                         
-        onClick={()=>onVenueSelected()}
-        onMouseOver={(e)=>onCardMouseAction(e)}
-        onMouseOut={(e)=>onCardMouseAction(e)}>
+        onClick={()=>onVenueSelected()}>
             {children}
         </div>
     );
